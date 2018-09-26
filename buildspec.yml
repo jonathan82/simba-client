@@ -1,0 +1,29 @@
+version: 0.2
+
+#env:
+  #variables:
+     # key: "value"
+     # key: "value"
+  #parameter-store:
+     # key: "value"
+     # key: "value"
+
+phases:
+  install:
+    commands:
+      - npm install -g @vue/cli
+  #pre_build:
+    #commands:
+      #npm install -g @vue/cli
+  build:
+    commands:
+      - npm install
+      - npm run build
+artifacts:
+  files:
+    - '**/*'
+  base-directory: dist
+cache:
+  paths:
+    - 'node_modules/**/*'
+    - '/usr/local/lib/node_modules/**/*'
