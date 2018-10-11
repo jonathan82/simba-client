@@ -1,6 +1,13 @@
 <template>
-  <v-app>
-    
+  <v-app dark>
+    <v-toolbar flat>
+      <v-toolbar-title>
+        City:
+      </v-toolbar-title>
+      <v-toolbar-items>
+        <v-btn flat>Hello</v-btn>
+      </v-toolbar-items>      
+    </v-toolbar>
   </v-app>
 </template>
 
