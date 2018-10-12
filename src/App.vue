@@ -1,13 +1,19 @@
 <template>
   <v-app dark>
     <v-toolbar flat>
-      <v-toolbar-title>
-        City:
-      </v-toolbar-title>
       <v-toolbar-items>
-        <v-btn flat>Hello</v-btn>
+        <v-select :items="cities" flat prepend-icon="map">
+        </v-select>
       </v-toolbar-items>      
     </v-toolbar>
+    hello
+    <v-carousel :cycle="false">
+      <v-carousel-item
+        v-for="(item,i) in items"
+        :key="i"
+        :src="item.src"
+      ></v-carousel-item>
+    </v-carousel>
   </v-app>
 </template>
 
@@ -21,17 +27,20 @@ export default {
   },
   data () {
     return {
-      clipped: false,
-      drawer: true,
-      fixed: false,
-      items: [{
-        icon: 'bubble_chart',
-        title: 'Inspire'
-      }],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
+      cities: ['sacramento', 'sf bay area'],
+      items: [
+        {
+          src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg'
+        },
+        {
+          src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
+        },
+        {
+          src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
+        },
+        {
+          src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
+        }]
     }
   }
 }
